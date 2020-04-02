@@ -14,5 +14,5 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     // What do we want - List<Booking>
 
-    List<Booking> findByDate(String date);
+    List<Booking> findByDateIgnoreCase(String date);
 }

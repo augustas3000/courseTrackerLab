@@ -37,7 +37,7 @@ class CoursetrackerApplicationTests {
 	@Test
 	public void canFindCustomersByCourse(){
 		List<Customer> foundCustomers;
-		foundCustomers = customerRepository.findByBookingsCourseName("Java");
+		foundCustomers = customerRepository.findByBookingsCourseNameIgnoreCase("Java");
 	}
 
 	@Test
@@ -49,18 +49,18 @@ class CoursetrackerApplicationTests {
 	@Test
 	public void canFindBookingByDate(){
 		List<Booking> foundBookings;
-		foundBookings = bookingRepository.findByDate("June");
+		foundBookings = bookingRepository.findByDateIgnoreCase("June");
 	}
 
 	@Test
 	public void canFindCustomerByTownAndCourse(){
 		List<Customer> foundCustomers;
-		foundCustomers = customerRepository.findByTownAndBookingsCourseName("Glasgow", "Python");
+		foundCustomers = customerRepository.findByTownIgnoreCaseAndBookingsCourseNameIgnoreCase("Glasgow", "Python");
 	}
 
 	@Test
 	public void canFindCustomerByAgeGreaterThanAndBookingCourseName(){
 		List<Customer> foundCustomer;
-		foundCustomer = customerRepository.findByAgeGreaterThanAndTownAndBookingsCourseName(30, "Glasgow", "Python");
+		foundCustomer = customerRepository.findByAgeGreaterThanAndTownIgnoreCaseAndBookingsCourseNameIgnoreCase(30, "Glasgow", "Python");
 	}
 }
